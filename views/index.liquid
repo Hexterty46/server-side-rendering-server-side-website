@@ -1,1 +1,22 @@
-Succes!
+{% render 'partials/head.liquid' %}
+<section>
+    <button>Oost</button>
+    <button>Zuid-oost</button>
+    <button>West</button>
+</section>
+
+<section>
+    <input type="search" placeholder="Search">
+</section>
+
+{% for story in stories %}
+<section>
+    <h1>Laatste nieuws</h1>
+    <img src="https://fdnd-agency.directus.app/assets/{{ story.cover.id }}" alt="" width="209" height="139">
+    <h2>{{ story.title }}</h2>
+    <p>{{ story.intro }}</p>
+    <p>Lees meer →</p>
+</section>
+{% endfor %}
+
+{% render 'partials/foot.liquid' %}
