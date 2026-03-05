@@ -1,0 +1,19 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    line-height: 1.5;
+}
+
+/* Header styling */
+
+header {
+    background-color: #B4BDD0;
+    display: flex;
+    img {
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+        scale: 1.5;
+    }
+}
