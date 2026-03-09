@@ -42,7 +42,7 @@ app.get('/', async function (request, response) {
    // Geef hier eventueel data aan mee
    const params = {
     'filter[district]': 'algemeen',
-    'fields': 'title, intro, date, cover.*'
+    'fields': 'title, district, intro, date, cover.*'
   }
 
   const apiURL = 'https://fdnd-agency.directus.app/items/buurtcampuskrant_stories?' + new URLSearchParams(params)
@@ -54,11 +54,45 @@ app.get('/', async function (request, response) {
    response.render('index.liquid', {stories : apiResponseJSON.data})
 })
 
-app.get('/west', async function (request, response) {
+app.get('/nieuw-west', async function (request, response) {
    // Render index.liquid uit de Views map
    // Geef hier eventueel data aan mee
    const params = {
-    'filter[district]': 'west',
+    'filter[district]': 'nieuw-west',
+    'fields': 'title, district, intro, date, cover.id'
+  }
+
+  const apiURL = 'https://fdnd-agency.directus.app/items/buurtcampuskrant_stories?' + new URLSearchParams(params)
+  // console.log(apiURL)
+
+  const apiResponse = await fetch(apiURL)
+  const apiResponseJSON = await apiResponse.json()
+  // console.log(apiResponseJSON.data)
+   response.render('Nieuw-West.liquid', {stories : apiResponseJSON.data})
+})
+
+app.get('/oost', async function (request, response) {
+   // Render index.liquid uit de Views map
+   // Geef hier eventueel data aan mee
+   const params = {
+    'filter[district]': 'oost',
+    'fields': 'title, district, intro, date, cover.id'
+  }
+
+  const apiURL = 'https://fdnd-agency.directus.app/items/buurtcampuskrant_stories?' + new URLSearchParams(params)
+  // console.log(apiURL)
+
+  const apiResponse = await fetch(apiURL)
+  const apiResponseJSON = await apiResponse.json()
+  // console.log(apiResponseJSON.data)
+   response.render('Oost.liquid', {stories : apiResponseJSON.data})
+})
+
+app.get('/zuid-oost', async function (request, response) {
+   // Render index.liquid uit de Views map
+   // Geef hier eventueel data aan mee
+   const params = {
+    'filter[district]': 'zuid-oost',
     'fields': 'title, intro, date, cover.id'
   }
 
@@ -68,7 +102,7 @@ app.get('/west', async function (request, response) {
   const apiResponse = await fetch(apiURL)
   const apiResponseJSON = await apiResponse.json()
   // console.log(apiResponseJSON.data)
-   response.render('index.liquid', {stories : apiResponseJSON.data})
+   response.render('Zuid-oost.liquid', {stories : apiResponseJSON.data})
 })
 
 app.get('/algemeen-nieuws-nieuw-oud', async function (request, response) {
