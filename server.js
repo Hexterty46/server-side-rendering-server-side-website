@@ -54,6 +54,59 @@ app.get('/', async function (request, response) {
    response.render('index.liquid', {stories : apiResponseJSON.data})
 })
 
+app.get('/west', async function (request, response) {
+   // Render index.liquid uit de Views map
+   // Geef hier eventueel data aan mee
+   const params = {
+    'filter[district]': 'west',
+    'fields': 'title, intro, date, cover.id'
+  }
+
+  const apiURL = 'https://fdnd-agency.directus.app/items/buurtcampuskrant_stories?' + new URLSearchParams(params)
+  // console.log(apiURL)
+
+  const apiResponse = await fetch(apiURL)
+  const apiResponseJSON = await apiResponse.json()
+  // console.log(apiResponseJSON.data)
+   response.render('index.liquid', {stories : apiResponseJSON.data})
+})
+
+app.get('/algemeen-nieuws-nieuw-oud', async function (request, response) {
+   // Render index.liquid uit de Views map
+   // Geef hier eventueel data aan mee
+   const params = {
+    'filter[district]': 'algemeen',
+    'fields': 'title, intro, date, cover.*',
+    'sort': '-date'
+  }
+
+  const apiURL = 'https://fdnd-agency.directus.app/items/buurtcampuskrant_stories?' + new URLSearchParams(params)
+  // console.log(apiURL)
+
+  const apiResponse = await fetch(apiURL)
+  const apiResponseJSON = await apiResponse.json()
+  // console.log(personResponseJSON.data)
+   response.render('index.liquid', {stories: apiResponseJSON.data})
+})
+
+app.get('/algemeen-nieuws-oud-nieuw', async function (request, response) {
+   // Render index.liquid uit de Views map
+   // Geef hier eventueel data aan mee
+   const params = {
+    'filter[district]': 'algemeen',
+    'fields': 'title, intro, date, cover.*',
+    'sort': 'date'
+  }
+
+  const apiURL = 'https://fdnd-agency.directus.app/items/buurtcampuskrant_stories?' + new URLSearchParams(params)
+  // console.log(apiURL)
+
+  const apiResponse = await fetch(apiURL)
+  const apiResponseJSON = await apiResponse.json()
+  // console.log(personResponseJSON.data)
+   response.render('index.liquid', {stories: apiResponseJSON.data})
+})
+
 // Maak een POST route voor de index; hiermee kun je bijvoorbeeld formulieren afvangen
 // Hier doen we nu nog niets mee, maar je kunt er mee spelen als je wilt
 app.post('/', async function (request, response) {
