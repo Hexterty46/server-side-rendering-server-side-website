@@ -19,6 +19,7 @@ body {
     background-color: #333d52;
     /* HEADER STYLING */
     header {
+        position: relative;
         background-color: var(--header-primary-background-color);
         display: flex;
         justify-content: space-between;
@@ -27,14 +28,28 @@ body {
         border-radius: 1rem;
         padding: 1rem;
 
+        /* .menu-area {
+            display: flex;
+            flex-direction: column;
+            z-index: 10;
+            width: 100%;
+            height: 580px;
+            opacity: 0;
+        } */
+
         button {
             padding: .5rem;
+            background-color: var(--primary-orange-color);
+            color: white;
+            border: none;
+            border-radius: .5rem;
 
             @media (min-width: 768px) {
                 display: none;
             }
         }
         nav {
+            position: relative;
             display: none;
             @media (min-width: 768px) {
                 display: flex;
@@ -76,8 +91,39 @@ body {
     }
 
     article {
-        border: 2px solid black;
+        border: 1px solid black;
         background-color: #333d52;
+        display: flex;
+        flex-direction: column;
+        gap: .4rem;
+        border-radius: .5rem;
+
+        &:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 14px rgba(0,0,0,.25);
+        }
+
+        details {
+            summary {
+                font-size: large;
+                font-family: Arial-regg, sans-serif;
+                color: #B4BDD0;
+                cursor: pointer;
+            }
+
+            p {
+                text-align: center;
+                font-weight: bold;
+                margin-top: .4rem;
+            }
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: .4rem;
+            border: none;
+        }
 
         time {
             color: #B4BDD0;
@@ -87,14 +133,27 @@ body {
             font-family: Arial-regg, sans-serif;
         }
 
-
-        h1, h2 {
+        h2 {
             color: #B4BDD0;
             font-family: Buurtcampus-Arial;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+
+        h1 {
+            color: #B4BDD0;
+            font-family: Buurtcampus-Arial;
+            text-align: center;
         }
 
         a {
             text-decoration: none;
+            color: #F26522;
+            font-weight: bold;
+
+            &:hover {
+                text-decoration: underline;
+            }
         }
 
         p {
