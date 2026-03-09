@@ -5,15 +5,101 @@
     line-height: 1.5;
 }
 
-/* Header styling */
+@font-face {
+    font-family: Arial-regg;
+    src: url(/arial.ttf);
+}
 
-header {
-    background-color: #B4BDD0;
-    display: flex;
-    img {
-        margin-left: auto;
-        margin-right: auto;
-        width: 50%;
-        scale: 1.5;
+@font-face {
+    font-family: Buurtcampus-Arial;
+    src: url(/BuurtCampusArial-Bold.woff);
+}
+
+body {
+    background-color: #333d52;
+    /* HEADER STYLING */
+    header {
+        background-color: var(--header-primary-background-color);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 1rem;
+        border-radius: 1rem;
+        padding: 1rem;
+
+        button {
+            padding: .5rem;
+
+            @media (min-width: 768px) {
+                display: none;
+            }
+        }
+        nav {
+            display: none;
+            @media (min-width: 768px) {
+                display: flex;
+            }
+
+            ul {
+
+                @media (min-width: 768px) {
+                    display: flex;
+                    gap: 2rem;
+                    padding-inline-end: 1rem;
+                }
+                li {
+                    list-style: none;
+                }
+            }
+        }
+    }
+    /* NIEWS STYLING */
+
+    .input-section {
+        background-color: #333d52;
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: center;
+        gap: .5rem;
+        padding-bottom: 1rem;
+
+        section {
+            grid-column: 2;
+            justify-self: center;
+        }
+
+        select {
+            grid-column: 3;
+            justify-self: end;
+        }
+
+    }
+
+    article {
+        border: 2px solid black;
+        background-color: #333d52;
+
+        time {
+            color: #B4BDD0;
+            display: flex;
+            gap: .3rem;
+            text-align: center;
+            font-family: Arial-regg, sans-serif;
+        }
+
+
+        h1, h2 {
+            color: #B4BDD0;
+            font-family: Buurtcampus-Arial;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        p {
+            font-family: Arial-regg, sans-serif;
+            color: #B4BDD0;
+        }
     }
 }
