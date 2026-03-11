@@ -16,26 +16,17 @@
 }
 
 body {
-    background-color: #333d52;
+    /* background-color: #333d52; */
     /* HEADER STYLING */
     header {
-        position: relative;
-        background-color: var(--header-primary-background-color);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin: 1rem;
-        border-radius: 1rem;
-        padding: 1rem;
+    background-color: var(--header-primary-background-color);
+    margin: 1rem;
+    border-radius: 1rem;
+    padding: 1rem;
 
-        /* .menu-area {
-            display: flex;
-            flex-direction: column;
-            z-index: 10;
-            width: 100%;
-            height: 580px;
-            opacity: 0;
-        } */
+    display: flex;
+    flex-direction: column;
+    gap: .7rem;
 
         button {
             padding: .5rem;
@@ -48,6 +39,38 @@ body {
                 display: none;
             }
         }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .search {
+            position: relative;
+            width: 100%;
+            /* align-self: center; */
+            input {
+                position: inherit;
+                width: 100%;
+                padding-left: 2.2rem;                
+                font-family: Arial-regg, sans-serif;
+                font-size: 1rem;
+                padding: .1rem;
+
+                &::placeholder {
+                    color: black;
+                }
+            }
+
+            svg {
+                position: absolute;
+                right: 1rem;
+                top: 7%;
+                transform: translate(10%);
+            }
+        }
+
         nav {
             position: relative;
             display: none;
@@ -69,34 +92,52 @@ body {
         }
     }
     /* NIEWS STYLING */
-
     .input-section {
-        background-color: #333d52;
-        display: grid;
-        grid-template-columns: 1fr auto 1fr;
+        /* background-color: #333d52; */
+        /* display: grid;
+        grid-template-columns: 1fr auto 1fr; */
         align-items: center;
         gap: .5rem;
-        padding-bottom: 1rem;
-
-        section {
-            grid-column: 2;
-            justify-self: center;
-        }
+        /* padding-bottom: .4rem; */
+        padding-inline-start: 1.1rem;
+        margin-block-end: -.7rem;
+        cursor: pointer;
 
         select {
-            grid-column: 3;
+            /* grid-column: 1; */
             justify-self: end;
+            padding: .2rem;
+            font-size: 1rem;
+            font-family: Arial-regg, sans-serif;
         }
 
     }
 
+    .menu {
+        display: flex;
+        position: fixed;
+        z-index: 10;
+        background-color: white;
+        translate: -100%;
+        width: 100%;
+        height: 100vh;
+        interactivity: inert;
+        transition: .3s ease ;
+
+        &.is-open {
+            translate: 0;
+            interactivity: auto;
+        }
+    }
+
     article {
         border: 1px solid black;
-        background-color: #333d52;
+        /* background-color: #333d52; */
         display: flex;
         flex-direction: column;
         gap: .4rem;
         border-radius: .5rem;
+        margin: 1rem;
 
         &:hover {
             transform: translateY(-4px);
@@ -107,7 +148,7 @@ body {
             summary {
                 font-size: large;
                 font-family: Arial-regg, sans-serif;
-                color: #B4BDD0;
+                /* color: #B4BDD0; */
                 cursor: pointer;
             }
 
@@ -121,12 +162,12 @@ body {
         img {
             width: 100%;
             height: auto;
-            border-radius: .4rem;
+            /* border-radius: .4rem; */
             border: none;
         }
 
         time {
-            color: #B4BDD0;
+            /* color: #B4BDD0; */
             display: flex;
             gap: .3rem;
             text-align: center;
@@ -134,14 +175,14 @@ body {
         }
 
         h2 {
-            color: #B4BDD0;
-            font-family: Buurtcampus-Arial;
+            /* color: #B4BDD0; */
+            font-family: Arial-regg, sans-serif;
             text-align: center;
-            font-size: 1.5rem;
+            /* font-size: 1.5rem; */
         }
 
         h1 {
-            color: #B4BDD0;
+            /* color: #B4BDD0; */
             font-family: Buurtcampus-Arial;
             text-align: center;
         }
@@ -158,7 +199,8 @@ body {
 
         p {
             font-family: Arial-regg, sans-serif;
-            color: #B4BDD0;
+            padding-block: 0.5em;
+            /* color: #B4BDD0; */
         }
     }
 }
