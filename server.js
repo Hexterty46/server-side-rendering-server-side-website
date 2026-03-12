@@ -45,13 +45,21 @@ app.get('/', async function (request, response) {
     'fields': 'title, district, intro, date, cover.*'
   }
 
+   if (request.query.search && request.query.search.trim() !== "") {
+      params['filter[title][_icontains]'] = request.query.search
+   }
+
   const apiURL = 'https://fdnd-agency.directus.app/items/buurtcampuskrant_stories?' + new URLSearchParams(params)
   // console.log(apiURL)
 
   const apiResponse = await fetch(apiURL)
   const apiResponseJSON = await apiResponse.json()
   console.log(apiResponseJSON.data)
-   response.render('index.liquid', {stories : apiResponseJSON.data})
+
+   response.render('index.liquid', {
+      stories : apiResponseJSON.data,
+      search: request.query.search || ""
+   })
 })
 
 app.get('/nieuw-west', async function (request, response) {
