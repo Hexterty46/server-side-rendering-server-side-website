@@ -101,6 +101,46 @@ body {
             border: none;
             margin-right: auto;
             margin-left: auto;
+
+            details {
+                margin: 0;
+                border: none;
+
+                ul {
+                    max-height: 140px;
+                    overflow: hidden;
+                    transition: max-height 0.3s ease;
+
+                    li {
+                        /* Hier moeten nog de kleuren komen van de buurten in de menu */
+                        a {
+                            font-size: 1.5rem;
+                        }
+                    }
+                }
+
+                summary {
+                    font-size: 2rem;
+                    color: #101828;
+                    transition: color 0.2s ease;
+
+                    span {
+                        font-family: Arial-regg, sans-serif;
+                    }
+
+                    svg {
+                        width: 1em;
+                        height: 1em;
+                        stroke: #101828;
+                        transition: color 0.2s ease;
+                    }
+
+                    &::marker {
+                        content: "";
+                    }
+                }
+            }
+
             li {
                 a {
                     font-family: Arial-regg, sans-serif;
@@ -160,10 +200,10 @@ body {
         /* border-radius: .5rem; */
         margin: 1rem;
 
-        &:hover {
+        /* &:hover {
             transform: translateY(-4px);
             box-shadow: 0 6px 14px rgba(0,0,0,.25);
-        }
+        } */
 
         details {
             summary {
