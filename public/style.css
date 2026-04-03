@@ -163,6 +163,10 @@ body {
         margin-block-end: -.7rem;
         cursor: pointer;
 
+        label {
+            display: flex;
+        }
+
         select {
             /* grid-column: 1; */
             justify-self: end;
