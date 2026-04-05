@@ -85,6 +85,10 @@ Stap 3) Open de Terminal in VSCodium of VSCode, Voer in de terminal het commando
 Stap 4 ) Na de installatie is de map node_modules aangemaakt, en gevuld met allerlei packages. Start de website door in de terminal het comando npm start uit te voeren. Als het goed is, komt hier een melding te staan over het opstarten van de server: Application started on http://localhost:8000 — Open deze URL in je browser.
 
 ## Bronnen
+- [Liquid - if/else](https://shopify.dev/docs/api/liquid/tags/conditional-else)
+- [JavaScript - 3 stappenplan](https://css-tricks.com/videos/150-hey-designers-know-one-thing-javascript-recommend/)
+- [De Volkskrant - inspiratie](https://www.volkskrant.nl/)
+- [NodeJS download](https://nodejs.org/en/download)
 
 ## Licentie
 
